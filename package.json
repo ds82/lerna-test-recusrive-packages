@@ -1,0 +1,17 @@
+{
+  "name": "lerna-test-recusrive-packages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bootstrap":
+      "rm -rf ./packages/**/package-lock.json ./packages/**/yarn.lock && rm -rf ./packages/**/node_modules && lerna bootstrap --loglevel verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^2.1.2"
+  }
+}

@@ -1,0 +1,92 @@
+0 silly input []
+1 silly flags { _: [ 'bootstrap' ],
+1 silly flags   loglevel: 'verbose',
+1 silly flags   stream: true,
+1 silly flags   args: [] }
+2 verbose rootPath /Users/dsaenger/code/lerna-test-recusrive-packages
+3 info version 2.1.2
+4 silly existsSync /Users/dsaenger/code/lerna-test-recusrive-packages/VERSION
+5 silly initialize attempt
+6 silly initialize success
+7 silly execute attempt
+8 info Bootstrapping 3 packages
+9 info lifecycle preinstall
+10 silly runScript preinstall a
+11 silly a
+12 silly runScript preinstall b
+13 silly b
+14 silly runScript preinstall c
+15 silly c
+16 silly hasDependencyInstalled a b
+17 silly dependencyIsSatisfied [ 'b',
+17 silly dependencyIsSatisfied   'file:./../b',
+17 silly dependencyIsSatisfied   '/Users/dsaenger/code/lerna-test-recusrive-packages/packages/a/node_modules' ]
+18 verbose dependencyIsSatisfied b false
+19 silly hasDependencyInstalled b c
+20 silly dependencyIsSatisfied [ 'c',
+20 silly dependencyIsSatisfied   'file:./../c',
+20 silly dependencyIsSatisfied   '/Users/dsaenger/code/lerna-test-recusrive-packages/packages/b/node_modules' ]
+21 verbose dependencyIsSatisfied c false
+22 silly root dependencies []
+23 silly leaf dependencies {
+23 silly leaf dependencies   "a": [
+23 silly leaf dependencies     {
+23 silly leaf dependencies       "dependency": "b@file:./../b",
+23 silly leaf dependencies       "isSatisfied": false
+23 silly leaf dependencies     }
+23 silly leaf dependencies   ],
+23 silly leaf dependencies   "b": [
+23 silly leaf dependencies     {
+23 silly leaf dependencies       "dependency": "c@file:./../c",
+23 silly leaf dependencies       "isSatisfied": false
+23 silly leaf dependencies     }
+23 silly leaf dependencies   ]
+23 silly leaf dependencies }
+24 info Installing external dependencies
+25 verbose actions 2 actions, concurrency 4
+26 silly installInDir a [ 'b@file:./../b' ]
+27 silly installInDir backup /Users/dsaenger/code/lerna-test-recusrive-packages/packages/a/package.json
+28 silly rename [ '/Users/dsaenger/code/lerna-test-recusrive-packages/packages/a/package.json',
+28 silly rename   '/Users/dsaenger/code/lerna-test-recusrive-packages/packages/a/package.json.lerna_backup' ]
+29 silly installInDir b [ 'c@file:./../c' ]
+30 silly installInDir backup /Users/dsaenger/code/lerna-test-recusrive-packages/packages/b/package.json
+31 silly rename [ '/Users/dsaenger/code/lerna-test-recusrive-packages/packages/b/package.json',
+31 silly rename   '/Users/dsaenger/code/lerna-test-recusrive-packages/packages/b/package.json.lerna_backup' ]
+32 silly installInDir writing tempJson { dependencies: { b: 'file:./../b' } }
+33 silly installInDir writing tempJson { dependencies: { c: 'file:./../c' } }
+34 silly getExecOpts { cwd: '/Users/dsaenger/code/lerna-test-recusrive-packages/packages/a' }
+35 silly installInDir [ 'npm', [ 'install' ] ]
+36 silly getExecOpts { cwd: '/Users/dsaenger/code/lerna-test-recusrive-packages/packages/b' }
+37 silly installInDir [ 'npm', [ 'install' ] ]
+38 silly installInDir cleanup /Users/dsaenger/code/lerna-test-recusrive-packages/packages/a/package.json
+39 silly renameSync [ '/Users/dsaenger/code/lerna-test-recusrive-packages/packages/a/package.json.lerna_backup',
+39 silly renameSync   '/Users/dsaenger/code/lerna-test-recusrive-packages/packages/a/package.json' ]
+40 verbose installed leaf a
+41 error execute Error: Command failed: npm install
+41 error execute npm ERR! addLocal Could not install /Users/dsaenger/code/lerna-test-recusrive-packages/packages/b
+41 error execute npm ERR! No name provided in package.json
+41 error execute
+41 error execute npm ERR! A complete log of this run can be found in:
+41 error execute npm ERR!     /Users/dsaenger/.npm/_logs/2017-09-14T12_17_40_299Z-debug.log
+41 error execute
+41 error execute     at Promise.all.then.arr (/Users/dsaenger/code/lerna-test-recusrive-packages/node_modules/execa/index.js:236:11)
+41 error execute     at process._tickCallback (internal/process/next_tick.js:109:7)
+41 error execute  callback with error
+41 error execute  { Error: Command failed: npm install
+41 error execute npm ERR! addLocal Could not install /Users/dsaenger/code/lerna-test-recusrive-packages/packages/b
+41 error execute npm ERR! No name provided in package.json
+41 error execute
+41 error execute npm ERR! A complete log of this run can be found in:
+41 error execute npm ERR!     /Users/dsaenger/.npm/_logs/2017-09-14T12_17_40_299Z-debug.log
+41 error execute
+41 error execute     at Promise.all.then.arr (/Users/dsaenger/code/lerna-test-recusrive-packages/node_modules/execa/index.js:236:11)
+41 error execute     at process._tickCallback (internal/process/next_tick.js:109:7)
+41 error execute   stack: 'Error: Command failed: npm install\nnpm ERR! addLocal Could not install /Users/dsaenger/code/lerna-test-recusrive-packages/packages/b\nnpm ERR! No name provided in package.json\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /Users/dsaenger/.npm/_logs/2017-09-14T12_17_40_299Z-debug.log\n\n    at Promise.all.then.arr (/Users/dsaenger/code/lerna-test-recusrive-packages/node_modules/execa/index.js:236:11)\n    at process._tickCallback (internal/process/next_tick.js:109:7)',
+41 error execute   code: 1,
+41 error execute   killed: false,
+41 error execute   stdout: '',
+41 error execute   stderr: 'npm ERR! addLocal Could not install /Users/dsaenger/code/lerna-test-recusrive-packages/packages/b\nnpm ERR! No name provided in package.json\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /Users/dsaenger/.npm/_logs/2017-09-14T12_17_40_299Z-debug.log\n',
+41 error execute   failed: true,
+41 error execute   signal: null,
+41 error execute   cmd: 'npm install',
+41 error execute   timedOut: false }
